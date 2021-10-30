@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  # install node version 12
+  install:
+    runtime-versions:
+      nodejs: 12
+  # install dependencies for our node app
+  pre_build:
+    commands:
+      - echo Installing dependencies
+      - npm install
+  # build stage: for now just run the test
+  build:
+    commands:
+      - echo Running tests
+      - npm test
