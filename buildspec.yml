@@ -25,7 +25,7 @@ phases:
       - echo Pushing to ECR 
       - docker push 504857465313.dkr.ecr.us-east-2.amazonaws.com/cicddockerimage:latest
       # need to add an imagedefinition to tell ecs which task to run upon each Deployment (which we will set up later)
-      - printf '[{"name":"CICDDocker", "imageUri":"504857465313.dkr.ecr.us-east-2.amazonaws.com/cicddockerimage:latest"}]' > imagedefinitions.json
+      - printf '[{"name":"cicddocker", "imageUri":"504857465313.dkr.ecr.us-east-2.amazonaws.com/cicddockerimage:latest"}]' > imagedefinitions.json
 
 # Now add this file as the artifact, aws uses an s3 bucket to store this file during build and read from the file during deployment!
 artifacts:
