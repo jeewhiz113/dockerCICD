@@ -17,7 +17,7 @@ phases:
       - npm test
       - echo Building and tagging Docker image
       - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 504857465313.dkr.ecr.us-east-2.amazonaws.com
-      - docker build -t cicddockerimage .
+      - docker buildx build --platform linux/amd64 --load -t cicddockerimage .
       - docker tag cicddockerimage:latest 504857465313.dkr.ecr.us-east-2.amazonaws.com/cicddockerimage:latest
 
   post_build:
