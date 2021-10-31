@@ -30,4 +30,4 @@ phases:
 # Now add this file as the artifact, aws uses an s3 bucket to store this file during build and read from the file during deployment!
 artifacts:
   files:
-    -imagedefinitions.json
+    - imagedefinitions.json
